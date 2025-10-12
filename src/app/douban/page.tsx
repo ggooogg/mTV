@@ -294,18 +294,20 @@ function DoubanPageClient() {
           data = {
             code: 200,
             message: 'success',
-            list: weekdayData.items.map((item) => ({
-              id: item.id?.toString() || '',
-              title: item.name_cn || item.name,
-              poster:
-                item.images.large ||
-                item.images.common ||
-                item.images.medium ||
-                item.images.small ||
-                item.images.grid,
-              rate: item.rating?.score?.toString() || '',
-              year: item.air_date?.split('-')?.[0] || '',
-            })),
+            list: weekdayData.items
+              .filter((item) => item.images !== null)
+              .map((item) => ({
+                id: item.id?.toString() || '',
+                title: item.name_cn || item.name,
+                poster:
+                  item.images.large ||
+                  item.images.common ||
+                  item.images.medium ||
+                  item.images.small ||
+                  item.images.grid,
+                rate: item.rating?.score?.toString() || '',
+                year: item.air_date?.split('-')?.[0] || '',
+              })),
           };
         } else {
           throw new Error('没有找到对应的日期');

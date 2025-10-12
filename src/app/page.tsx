@@ -368,28 +368,30 @@ function HomeClient() {
                             (item) => item.weekday.en === currentWeekday
                           )?.items || [];
 
-                        return todayAnimes.map((anime, index) => (
-                          <div
-                            key={`${anime.id}-${index}`}
-                            className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
-                          >
-                            <VideoCard
-                              from='douban'
-                              title={anime.name_cn || anime.name}
-                              poster={
-                                anime.images.large ||
-                                anime.images.common ||
-                                anime.images.medium ||
-                                anime.images.small ||
-                                anime.images.grid
-                              }
-                              douban_id={anime.id}
-                              rate={anime.rating?.score?.toString() || ''}
-                              year={anime.air_date?.split('-')?.[0] || ''}
-                              isBangumi={true}
-                            />
-                          </div>
-                        ));
+                        return todayAnimes
+                          .filter((item) => item.images !== null)
+                          .map((anime, index) => (
+                            <div
+                              key={`${anime.id}-${index}`}
+                              className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
+                            >
+                              <VideoCard
+                                from='douban'
+                                title={anime.name_cn || anime.name}
+                                poster={
+                                  anime.images.large ||
+                                  anime.images.common ||
+                                  anime.images.medium ||
+                                  anime.images.small ||
+                                  anime.images.grid
+                                }
+                                douban_id={anime.id}
+                                rate={anime.rating?.score?.toString() || ''}
+                                year={anime.air_date?.split('-')?.[0] || ''}
+                                isBangumi={true}
+                              />
+                            </div>
+                          ));
                       })()}
                 </ScrollableRow>
               </section>
