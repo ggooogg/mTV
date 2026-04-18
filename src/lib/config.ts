@@ -200,10 +200,12 @@ async function initConfig() {
               Number(process.env.NEXT_PUBLIC_SEARCH_MAX_PAGE) || 5,
             SiteInterfaceCacheTime: fileConfig.cache_time || 7200,
             DoubanProxyType:
-              process.env.NEXT_PUBLIC_DOUBAN_PROXY_TYPE || 'direct',
+              process.env.NEXT_PUBLIC_DOUBAN_PROXY_TYPE ||
+              'cmliussss-cdn-tencent',
             DoubanProxy: process.env.NEXT_PUBLIC_DOUBAN_PROXY || '',
             DoubanImageProxyType:
-              process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE || 'direct',
+              process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE ||
+              'cmliussss-cdn-tencent',
             DoubanImageProxy: process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY || '',
             DisableYellowFilter:
               process.env.NEXT_PUBLIC_DISABLE_YELLOW_FILTER === 'true',
@@ -251,10 +253,12 @@ async function initConfig() {
         SearchDownstreamMaxPage:
           Number(process.env.NEXT_PUBLIC_SEARCH_MAX_PAGE) || 5,
         SiteInterfaceCacheTime: fileConfig.cache_time || 7200,
-        DoubanProxyType: process.env.NEXT_PUBLIC_DOUBAN_PROXY_TYPE || 'direct',
+        DoubanProxyType:
+          process.env.NEXT_PUBLIC_DOUBAN_PROXY_TYPE || 'cmliussss-cdn-tencent',
         DoubanProxy: process.env.NEXT_PUBLIC_DOUBAN_PROXY || '',
         DoubanImageProxyType:
-          process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE || 'direct',
+          process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE ||
+          'cmliussss-cdn-tencent',
         DoubanImageProxy: process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY || '',
         DisableYellowFilter:
           process.env.NEXT_PUBLIC_DISABLE_YELLOW_FILTER === 'true',
@@ -310,11 +314,12 @@ export async function getConfig(): Promise<AdminConfig> {
     adminConfig.UserConfig.AllowRegister =
       process.env.NEXT_PUBLIC_ENABLE_REGISTER === 'true';
     adminConfig.SiteConfig.DoubanProxyType =
-      process.env.NEXT_PUBLIC_DOUBAN_PROXY_TYPE || 'direct';
+      process.env.NEXT_PUBLIC_DOUBAN_PROXY_TYPE || 'cmliussss-cdn-tencent';
     adminConfig.SiteConfig.DoubanProxy =
       process.env.NEXT_PUBLIC_DOUBAN_PROXY || '';
     adminConfig.SiteConfig.DoubanImageProxyType =
-      process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE || 'direct';
+      process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE ||
+      'cmliussss-cdn-tencent';
     adminConfig.SiteConfig.DoubanImageProxy =
       process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY || '';
     adminConfig.SiteConfig.DisableYellowFilter =
@@ -448,10 +453,12 @@ export async function resetConfig() {
       SearchDownstreamMaxPage:
         Number(process.env.NEXT_PUBLIC_SEARCH_MAX_PAGE) || 5,
       SiteInterfaceCacheTime: fileConfig.cache_time || 7200,
-      DoubanProxyType: process.env.NEXT_PUBLIC_DOUBAN_PROXY_TYPE || 'direct',
+      DoubanProxyType:
+        process.env.NEXT_PUBLIC_DOUBAN_PROXY_TYPE || 'cmliussss-cdn-tencent',
       DoubanProxy: process.env.NEXT_PUBLIC_DOUBAN_PROXY || '',
       DoubanImageProxyType:
-        process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE || 'direct',
+        process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE ||
+        'cmliussss-cdn-tencent',
       DoubanImageProxy: process.env.NEXT_PUBLIC_DOUBAN_IMAGE_PROXY || '',
       DisableYellowFilter:
         process.env.NEXT_PUBLIC_DISABLE_YELLOW_FILTER === 'true',
